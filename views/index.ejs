@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.css' rel='stylesheet' />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/index/index.css">
+    <link rel="stylesheet" href="/css/partials/sidebar.css">
+    <link rel="stylesheet" href="/css/event/eventAdd.css">
+    <link rel="stylesheet" href="/css/event/eventMenu.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/pt-br.js"></script>
+    <script src="/js/event/eventAdd.js" defer></script>
+    <script src="/js/partials/sidebar.js" defer></script>
+    <script src="/js/index/index.js" defer></script>
+</head>
+<body>
+    <%- include('partials/sidebar.ejs') %>
+    <div class="homeContent">
+        <div class="calendarContainer">
+            <h1>Student Shedule</h1>
+            <div class="toolsBar">
+                <div class="createEventButton">
+                    <i class='bx bx-calendar-plus' ></i>
+                </div>
+            </div>
+            <div id='calendar'></div>
+        </div>
+        <div class="menuEventContainer">
+            <div class="menuEventCard">
+                <div class="escButtonMenu">
+                    <i class='bx bx-x-circle' ></i>
+                </div>
+                <div class="menuContainer">
+                    <div class="menuDelimiter">
+                        <h2 id="eventName"></h2>
+                        <label for="eventDescription">Descrição:</label>
+                        <p id="eventDescription"></p>
+                        <label for="eventTeacher">Professor:</label>
+                        <p id="eventTeacher"></p>
+                        <div class="timeDelimiter">
+                            <label for="eventStart">Inicio:</label>
+                            <p id="eventStart"></p>
+                            <label for="eventEnd">Fim:</label>
+                            <p id="eventEnd"></p>
+                        </div>
+                    </div>
+                    <div class="menuButtons">    
+                        <a class="btnMenu" href="" id="eventEdit">
+                            <span>Edita</span>
+                        </a>
+                        <form action="/event/delete" method="post" class="">
+                            <input type="hidden" name="id" id="eventId">
+                            <button class="btnMenu delete" type="submit">Deletar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addEventContainer">
+            <div class="addEventCard">
+                <div class="escButton">
+                    <i class='bx bx-x-circle' ></i>
+                </div>
+                <div class="formContainer">
+                    <form action="/event/create" method="post">
+                        <div class="formDelimiter">
+                            <div class="selectMenuContainer">
+                                <div class="selectBox">
+                                    <div class="optionContainer">
+                                        <% grades.forEach(element => { %>
+                                            <input type="radio" class="radio" value="<%= element.id %>" id="<%= element.id %>" name="teacher">
+                                            <label class="option" for="<%= element.id %>"><%= element.name %></label>
+                                        <% }) %>
+                                    </div>
+                                    <div class="selected">
+                                        <span class="sBtnText">Selecione a matéria</span>
+                                        <i class='bx bx-chevron-down'></i>
+                                    </div>
+                                </div>
+                            </div>
+                           <div class="radioBtnContainer">
+                                <div class="wrapper">
+                                    <input type="radio" name="week" value="seg" id="option1">
+                                    <label for="option1" class="option option1">
+                                        <div class="dot"></div>
+                                        <span>seg</span>
+                                    </label>
+                                    <input type="radio" name="week" value="ter" id="option2">
+                                    <label for="option2" class="option option2">
+                                        <div class="dot"></div>
+                                        <span>ter</span>
+                                    </label>
+                                    <input type="radio" name="week" value="qua" id="option3">
+                                    <label for="option3" class="option option3">
+                                        <div class="dot"></div>
+                                        <span>qua</span>
+                                    </label>
+                                    <input type="radio" name="week" value="qui" id="option4">
+                                    <label for="option4" class="option option4">
+                                        <div class="dot"></div>
+                                        <span>qui</span>
+                                    </label>
+                                    <input type="radio" name="week" value="sex" id="option5">
+                                    <label for="option5" class="option option5">
+                                        <div class="dot"></div>
+                                        <span>sex</span>
+                                    </label>
+                                    <input type="radio" name="week" value="sab" id="option6">
+                                    <label for="option6" class="option option6">
+                                        <div class="dot"></div>
+                                        <span>sáb</span>
+                                    </label>
+                                    <input type="radio" name="week" value="dom" id="option7">
+                                    <label for="option7" class="option option7">
+                                        <div class="dot"></div>
+                                        <span>dom</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <label for="description" class="inputLabel">Descrição do evento:</label>
+                            <input class="inputElement" type="text" id="description" name="description">
+                            <label for="star" class="inputLabel">Inicio:</label>
+                            <input class="inputElement" type="time" id="start" name="start">
+                            <label for="end" class="inputLabel">Fim:</label>
+                            <input class="inputElement" type="time" id="end" name="end">
+                        </div>
+                        <button class="btn" type="submit">Criar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

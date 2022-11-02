@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/partials/sidebar.css">
+    <link rel="stylesheet" href="/css/grade/gradeAdd.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/js/partials/sidebar.js" defer></script>
+    <script src="/js/grade/index.js" defer></script>
+    <link rel="stylesheet" href="/css/grade/index.css">
+    <title>Grades</title>
+</head>
+<body>
+    <%- include('../partials/sidebar.ejs') %>
+    <div class="homeContent">
+        <div class="gradeListConatiner">
+            <div class="headerContainer">
+                <h2>Matérias</h2>
+            </div>
+            <div class="toolsBar">
+                <div class="createGradeButton">
+                    <i class='bx bx-calendar-plus' ></i>
+                </div>
+            </div>
+            <div class="listContainer">
+                <% grades.forEach(element => { %>
+                    <div class="listItem">
+                        <div class="itemName">
+                            <span>
+                                <%= element.name %>
+                            </span> 
+                        </div>
+                        <div class="itemOption">        
+                            <a href="/grade/edit/<%= element.id %>">
+                                <button class="btnOption edit">
+                                    <i class='bx bx-edit'></i>
+                                </button>
+                            </a>
+                            <form method="post" action="/grade/delete" style="display: inline;">
+                                <input type="hidden" name="id" value="<%= element.id %>">
+                                <button class="btnOption delete" type="submit">
+                                    <i class='bx bx-trash-alt'></i>
+                                </button> 
+                            </form> 
+                        </div>
+                    </div class="listItem">
+                <% }) %>
+            </div>
+        </div>
+        <div class="addGradeContainer">
+            <div class="addGradeCard">
+                <div class="escButton">
+                    <i class='bx bx-x-circle' ></i>
+                </div>
+                <div class="formContainer">
+                    <form action="/grade/create" method="post">
+                        <div class="formDelimiter">
+                            <label for="name" class="inputLabel">Nome:</label>
+                            <input class="inputElement" type="text" id="name" name="name" required>
+                            <label for="abbreviation" class="inputLabel">Abreviação:</label>
+                            <input class="inputElement" type="text" id="abbreviation" name="abbreviation" required>
+                            <label for="teacher" class="inputLabel">Professor:</label>
+                            <input class="inputElement" type="text" id="teacher" name="teacher" required>
+                            <label for="color" class="inputLabel color">Cor:</label>
+                            <div class="colorContainer">
+                                <input class="inputElement color" type="color" id="color" name="color">
+                            </div>
+                            <input type="hidden" name="id">
+                        </div>
+                        <button class="btn" type="submit">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

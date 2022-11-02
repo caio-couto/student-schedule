@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+    <link rel="stylesheet" href="/css/partials/sidebar.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/grade/edit.css">
+    <script src="/js/partials/sidebar.js" defer></script>
+    <script src="/js/grade/edit.js" defer></script>
+</head>
+<body>
+    <%- include('../partials/sidebar') %>
+    <div class="homeContent">
+        <div class="editGradeContainer active">
+            <div class="editGradeCard">
+                <h2>Editar matéria</h2>
+                <div class="formContainer">
+                    <form action="/grade/update" method="post">
+                        <div class="formDelimiter">
+                            <label for="name" class="inputLabel">Nome:</label>
+                            <input class="inputElement" type="text" id="name" value="<%= grade.name %>" name="name" required>
+                            <label for="abbreviation" class="inputLabel">Abreviação:</label>
+                            <input class="inputElement" type="text" id="abbreviation" value="<%= grade.abbreviation %>" name="abbreviation" required>
+                            <label for="teacher" class="inputLabel">Professor:</label>
+                            <input class="inputElement" type="text" id="teacher" value="<%= grade.teacher %>" name="teacher" required>
+                            <label for="color" class="inputLabel color">Cor:</label>
+                            <div class="colorContainer">
+                                <input class="inputElement color" type="color" id="color" value="<%= grade.color %>"  name="color" required>
+                            </div>
+                            <input type="hidden" name="id" value="<%= grade.id %>">
+                        </div>
+                        <button class="btn" type="submit">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

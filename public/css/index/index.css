@@ -1,0 +1,126 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+* 
+{
+    scrollbar-width: auto;
+    scrollbar-color: #1f1f1f #ffffff;
+}
+*::-webkit-scrollbar 
+{
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track 
+{
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb 
+{
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    border: 3px solid transparent;
+}
+html
+{
+    width: 100%;
+    height: 100%;
+}
+body 
+{
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+#calendar 
+{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.fc-event-time
+{
+    text-align: center;
+    padding: 5%;
+}
+.fc-event-title-container
+{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.homeContent
+{
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.homeContent .text
+{
+   font-size: 25px;
+   font-weight: 500;
+   color: #1d1b31; 
+   margin: 12px;
+}
+.calendarContainer
+{
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
+}
+.calendarContainer .toolsBar
+{
+    padding: 10px 0px 10px 0px;
+}
+#eventMenu
+{
+    display: none;
+}
+.createEventButton
+{
+    cursor: pointer;
+    position: relative;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: #1d1b31;
+    color: white;
+    border-radius: 8px;
+}
+.createEventButton i
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 600px) 
+{
+    * 
+    {
+        scrollbar-width: auto;
+        scrollbar-color: #1f1f1f #ffffff;
+    }
+    *::-webkit-scrollbar 
+    {
+        width: 5px;
+    }
+    
+    *::-webkit-scrollbar-track 
+    {
+        background: transparent;
+    }
+    
+    *::-webkit-scrollbar-thumb
+    {
+        background-color: #1f1f1f;
+        border-radius: 10px;
+        border: 3px solid transparent;
+    }
+}

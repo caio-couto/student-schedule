@@ -1,0 +1,115 @@
+
+.menuEventContainer
+{
+    display: none;
+}
+.menuEventContainer.active
+{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.menuEventContainer .menuEventCard
+{
+    position: relative;
+    max-width: 450px;
+    max-height: 380px;
+    width: 90%;
+    padding-bottom: 10px;
+    border-radius: 12px;
+    background-color: #11101d;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.menuEventCard .escButtonMenu
+{
+    position: relative;
+    width: 60px;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+.menuEventCard .menuContainer
+{
+    width: 90%;
+    margin: auto;
+}
+.menuEventCard .menuContainer .menuDelimiter
+{
+    height: 241px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.menuEventCard .menuDelimiter h2
+{
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+.menuEventCard .menuDelimiter label
+{
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+}
+.menuEventCard .menuDelimiter p
+{
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.menuEventCard .menuDelimiter .timeDelimiter
+{
+    display: flex;
+    justify-content: space-between;
+}
+.menuEventCard .menuContainer .menuButtons
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.menuEventCard .menuContainer .menuButtons .btnMenu
+{
+    width: 140px;
+    height: 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: yellow;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+.menuEventCard .menuContainer .menuButtons .btnMenu:hover
+{
+    border: 2px solid #11101d;
+}
+.menuEventCard .menuContainer .menuButtons a
+{
+    position: relative;
+}
+.menuEventCard .menuContainer .menuButtons a span
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menuEventCard .menuContainer .menuButtons .btnMenu.delete
+{
+    color: white;
+    background-color: red;
+}

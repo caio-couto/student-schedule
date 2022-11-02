@@ -1,0 +1,231 @@
+form
+{
+    position: relative;
+}
+.addEventContainer
+{
+    display: none;
+}
+.addEventContainer.active
+{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.addEventContainer .addEventCard
+{
+    padding-bottom: 10px;
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 12px;
+    background-color: #11101d;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.addEventCard .escButton
+{
+    position: relative;
+    width: 60px;
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+.addEventContainer .addEventCard .formContainer
+{
+    margin: 0 auto;
+    width: 90%;
+    /* height: 100%; */
+}
+.addEventContainer .addEventCard .formContainer .formDelimiter
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* height: 440px; */
+    /* margin-bottom: 20px; */
+}
+.selectMenuContainer
+{
+    margin-right: 8px;
+}
+.selectBox
+{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.selectBox .optionContainer
+{
+    background: #fff;
+    color: black;
+    width: 100%;
+    transition: all 0.4s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
+    order: 1;
+}
+.selected
+{
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    position: relative;
+}
+.selected i
+{
+    font-size: 30px;
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    transition: all 0.4s ease;
+}
+.selectBox .optionContainer.active
+{
+    max-height: 240px;
+    opacity: 1;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+.selectBox .optionContainer.active + .selected i
+{
+    transform: rotate(180deg);
+}
+.selectBox .option, .selected
+{
+    width: 100%;
+    display: block;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.selectBox .option:hover
+{
+    background-color: #11101d67;
+}
+.selectBox label
+{
+    cursor: pointer;
+}
+.selectBox .option label
+{
+    width: 30px;
+    height: 30px;
+}
+.selectBox .optionContainer .radio
+{
+    display: none;
+}
+.inputElement
+{
+    font-size: 15px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px 20px 0px;
+    width: calc(100% - 8px);
+    height: 45px;
+    border-radius: 8px;
+}
+.radioBtnContainer
+{
+    width: 100%;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+}
+.wrapper
+{
+    height: 45px;
+    width: calc(100% - 8px);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.wrapper .option
+{
+    background-color: rgb(177, 177, 177);
+    height: 100%;
+    width: 100%;
+    margin: 0 7px;
+    padding: 10px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.wrapper .option span
+{
+    font-weight: 700;
+}
+
+#option1:checked ~ .option1
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option2:checked ~ .option2
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option3:checked ~ .option3
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option4:checked ~ .option4
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option5:checked ~ .option5
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option6:checked ~ .option6
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option7:checked ~ .option7
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+
+.wrapper input[type="radio"]
+{
+    display: none;
+}
+.inputLabel
+{
+    color: #fff;
+}
+.btn
+{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: rgb(39, 215, 39);
+    border: none;
+    cursor: pointer;
+}

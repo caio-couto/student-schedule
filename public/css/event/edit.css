@@ -1,0 +1,281 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+* 
+{
+    scrollbar-width: auto;
+    scrollbar-color: #cacaca #11101d;
+}
+*::-webkit-scrollbar 
+{
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track 
+{
+    background: #11101d;
+}
+
+*::-webkit-scrollbar-thumb 
+{
+    background-color: #cacaca;
+    border-radius: 10px;
+    border: 5px solid #11101d;
+}
+body 
+{
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.homeContent
+{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+.homeContent .text
+{
+   font-size: 25px;
+   font-weight: 500;
+   color: #1d1b31; 
+   margin: 12px;
+}
+.sidebar.active ~ .homeContent
+{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+.editEventContainer
+{
+    display: none;
+}
+.editEventContainer.active
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b2b2b2;
+}
+.editEventContainer .editEventCard
+{
+    position: relative;
+    width: 450px;
+    height: 600px;
+    border-radius: 12px;
+    background-color: #11101d;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.editEventContainer .editEventCard .formContainer
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 500px;
+}
+.editEventContainer .editEventCard .formContainer .formDelimiter
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 440px;
+    margin-bottom: 20px;
+}
+.editEventContainer .editEventCard h2
+{
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+.selectBox
+{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.selectBox .optionContainer
+{
+    background: #fff;
+    color: black;
+    width: 100%;
+    transition: all 0.4s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
+    order: 1;
+}
+.selected
+{
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    position: relative;
+}
+.selected i
+{
+    font-size: 30px;
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    transition: all 0.4s ease;
+}
+.selectBox .optionContainer.active
+{
+    max-height: 240px;
+    opacity: 1;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+.selectBox .optionContainer.active + .selected i
+{
+    transform: rotate(180deg);
+}
+.selectBox .option, .selected
+{
+    width: 100%;
+    display: block;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.selectBox .option:hover
+{
+    background-color: #11101d67;
+}
+.selectBox label
+{
+    cursor: pointer;
+}
+.selectBox .option label
+{
+    width: 30px;
+    height: 30px;
+}
+.selectBox .optionContainer .radio
+{
+    display: none;
+}
+
+.inputElement
+{
+    font-size: 15px;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px 20px 0px;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+}
+.radioBtnContainer
+{
+    width: 100%;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+}
+.wrapper
+{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.wrapper .option
+{
+    background-color: rgb(177, 177, 177);
+    height: 100%;
+    width: 100%;
+    margin: 0 7px;
+    padding: 10px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.wrapper .option span
+{
+    font-weight: 700;
+}
+
+#option1:checked ~ .option1
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option2:checked ~ .option2
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option3:checked ~ .option3
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option4:checked ~ .option4
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option5:checked ~ .option5
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option6:checked ~ .option6
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+#option7:checked ~ .option7
+{
+    border: 3px solid rgb(253, 253, 253);
+    background-color: rgb(128, 128, 128);
+}
+
+.wrapper input[type="radio"]
+{
+    display: none;
+}
+.inputLabel
+{
+    color: #fff;
+}
+.btn
+{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: rgb(39, 215, 39);
+    border: none;
+    cursor: pointer;
+}
