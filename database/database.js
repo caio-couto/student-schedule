@@ -1,5 +1,6 @@
 const sequelize = require('sequelize');
-const connection = new sequelize('schedule', 'root', 'Cavalcante12345.',
+const dbPassword = 'password'
+const connection = new sequelize('schedule', 'root', dbPassword,
 {
     host: 'localhost',
     dialect: 'mysql',
